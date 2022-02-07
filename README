@@ -1,7 +1,4 @@
-This is an alpha release of AnarchyIRCd, licensed under the GNU General Public
-License version 2 or later (at your option), found in the file 'COPYING' included
-with this distribution; due to its very nature, the code is in constant flux
-and stability issues are likely. There is as-yet many features left to implement.
+To get started type "make", once built run "./anircd" 
 
 It requires an SSL private key / cert pair (PEM format) in the file 'ircd.pem'
 in order to function, and gnutls libs/headers. It may be compiled without SSL
