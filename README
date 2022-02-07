@@ -1,0 +1,20 @@
+This is an alpha release of AnarchyIRCd, licensed under the GNU General Public
+License version 2 or later (at your option), found in the file 'COPYING' included
+with this distribution; due to its very nature, the code is in constant flux
+and stability issues are likely. There is as-yet many features left to implement.
+
+It requires an SSL private key / cert pair (PEM format) in the file 'ircd.pem'
+in order to function, and gnutls libs/headers. It may be compiled without SSL
+by removing -DSSL_GNUTLS CFLAG and the appropriate libgnutls-config LDFLAGS and
+CFLAGS.
+
+For a self-signed certificate:
+openssl genrsa -out key.pem 4096	# gen key
+# here, the CN (Common Name) must be the server name
+openssl req -new -x509 -days 365 -out cert.pem -key key.pem
+cat key.pem cert.pem > ircd.pem
+rm -f key.pem cert.pem
+
+--
+Author: Shannon <x@ptr.me>
+Copyright (c) 2006-2021 Shannnon . All rights reserved.
